@@ -42,7 +42,7 @@ export const MovieReviews = () => {
           ))}
         </ul>
       ) : (
-        <p>We don't have any reviews of this movie 👀</p>
+        <p>We do not have any reviews of this movie 👀</p>
       )}
       {error && <ErrorMessage />}
     </div>
