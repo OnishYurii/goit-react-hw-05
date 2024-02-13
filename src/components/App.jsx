@@ -5,6 +5,8 @@ import HomePage from '../pages/HomePage';
 import { Toaster } from 'react-hot-toast';
 import MoviesPage from '../pages/MoviesPage';
 import MovieDetailsPage from '../pages/MovieDetailsPage';
+import { MovieReviews } from './MovieReviews/MovieReviews';
+import { MovieCast } from './MovieCast/MovieCast';
 
 function App() {
   return (
@@ -15,8 +17,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<div>MovieCast</div>} />
-          <Route path="reviews" element={<div>MovieRewies</div>} />
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

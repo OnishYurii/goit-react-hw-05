@@ -1,3 +1,5 @@
+import { NavLink, Outlet } from 'react-router-dom';
+
 export const MovieDetailComponent = ({
   data: { title, vote_average, overview, poster_path, genres, release_date },
 }) => {
@@ -20,6 +22,17 @@ export const MovieDetailComponent = ({
           ))}
         </ul>
       </div>
+      <h2>Additional information</h2>
+      <ul>
+        <li>
+          <NavLink to="cast">Cast</NavLink>
+        </li>
+        <li>
+          <NavLink to="reviews">Reviews</NavLink>
+        </li>
+      </ul>
+
+      <Outlet />
     </div>
   );
 };

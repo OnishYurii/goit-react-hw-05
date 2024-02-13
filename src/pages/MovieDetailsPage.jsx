@@ -17,7 +17,6 @@ const MovieDetailsPage = () => {
         const fetchedData = await getMovieDetails(movieId, {
           abortController: controller,
         });
-        console.log(fetchedData);
         setMovie(fetchedData);
       } catch (error) {
         if (error.code !== 'ERR_CANCELED') {
