@@ -7,7 +7,7 @@ export const ItemList = ({ data }) => {
       {data.map(item => (
         <li key={item.id}>
           <img src={baseUrl + item.poster_path} alt={item.title} />
-          <Link to="/movies/:movieId">{item.title}</Link>
+          <Link to={`/movies/${item.id}`}>{item.title}</Link>
         </li>
       ))}
     </ul>
