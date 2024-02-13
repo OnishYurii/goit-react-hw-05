@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../api';
-import { TrendingList } from '../components/TrendingList/TrendingList';
+import { ItemList } from '../components/ItemList/ItemList';
 import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage';
 
 const HomePage = () => {
@@ -32,7 +32,7 @@ const HomePage = () => {
     <div>
       <h1>Weekly Trends</h1>
       {error && <ErrorMessage />}
-      {results.length > 0 && <TrendingList data={results} />}
+      {results.length > 0 && <ItemList data={results} />}
     </div>
   );
 };

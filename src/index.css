@@ -3,6 +3,19 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+body {
+  margin: 0;
+  text-align: center;
+  background-color: rgb(204, 206, 207);
+}
+
+button:hover,
+button:focus {
+  background-color: #696765;
+}
+
 ul {
-  list-style: none;
+  list-style-type: none;
+  padding: 0;
 }
