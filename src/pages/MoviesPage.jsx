@@ -4,19 +4,22 @@ import { SearchBar } from '../components/SearchBar/SearchBar';
 import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage';
 import { ItemList } from '../components/ItemList/ItemList';
 import { MagnifyingGlass } from 'react-loader-spinner';
+import { useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [params, setParams] = useSearchParams();
 
   const searchMovies = newQuery => {
-    setQuery(`${Date.now()}/${newQuery}`);
     setMovies([]);
+    params.set('query', newQuery);
+    setParams(params);
   };
 
   useEffect(() => {
+    const query = params.get('query') ?? '';
     if (query === '') {
       return;
     }
@@ -25,7 +28,7 @@ const MoviesPage = () => {
       try {
         setLoading(true);
         setError(false);
-        const fetchedData = await getSearchMovies(query.split('/')[1]);
+        const fetchedData = await getSearchMovies(query);
         setMovies(fetchedData);
       } catch (error) {
         setError(true);
@@ -35,7 +38,7 @@ const MoviesPage = () => {
     };
 
     fetchData();
-  }, [query]);
+  }, [params]);
 
   return (
     <div>
