@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getCast } from '../../api';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
-export const MovieCast = () => {
+const MovieCast = () => {
   const { movieId } = useParams();
   const [actors, setActors] = useState([]);
   const [error, setError] = useState(false);
@@ -47,3 +47,5 @@ export const MovieCast = () => {
     </div>
   );
 };
+
+export default MovieCast;

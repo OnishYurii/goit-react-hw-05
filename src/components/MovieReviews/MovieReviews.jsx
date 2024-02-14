@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getReviews } from '../../api';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 
-export const MovieReviews = () => {
+const MovieReviews = () => {
   const { movieId } = useParams();
   const [reviews, setReview] = useState([]);
   const [error, setError] = useState(false);
@@ -48,3 +48,5 @@ export const MovieReviews = () => {
     </div>
   );
 };
+
+export default MovieReviews;

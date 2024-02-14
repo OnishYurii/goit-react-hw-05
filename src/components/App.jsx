@@ -2,13 +2,13 @@ import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { NavBar } from './NavBar/NavBar';
 import { Toaster } from 'react-hot-toast';
-import { MovieCast } from './MovieCast/MovieCast';
-import { MovieReviews } from './MovieReviews/MovieReviews';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+const MovieCast = lazy(() => import('./MovieCast/MovieCast'));
+const MovieReviews = lazy(() => import('./MovieReviews/MovieReviews'));
 
 function App() {
   return (
