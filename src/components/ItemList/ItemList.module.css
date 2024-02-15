@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: calc((100% - 15px) / 4);
 }
 
 .list {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .link {
