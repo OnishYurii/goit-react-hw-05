@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from '../../api';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import css from './MovieReviews.module.css';
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -31,13 +32,13 @@ const MovieReviews = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.wrap}>
       {reviews.length > 0 ? (
         <ul>
           {reviews.map(review => (
             <li key={review.id}>
               <h3>Author: {review.author}</h3>
-              <p>{review.content}</p>
+              <p className={css.text}>{review.content}</p>
             </li>
           ))}
         </ul>

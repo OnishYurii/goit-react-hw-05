@@ -1,0 +1,45 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  color: rgb(227, 174, 147);
+}
+
+.title {
+  font-size: 30px;
+  padding-top: 0;
+}
+
+.midDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.overview {
+  max-width: 500px;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  text-decoration: underline;
+  color: rgb(227, 174, 147);
+  font-size: 20px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active {
+  color: #c46127;
+}
+
+.link:hover,
+.link:focus {
+  color: #c74c26;
+}

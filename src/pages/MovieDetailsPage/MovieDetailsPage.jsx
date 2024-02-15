@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useLocation, useParams, Outlet } from 'react-router-dom';
-import { getMovieDetails } from '../api';
-import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage';
-import { MovieDetailComponent } from '../components/MovieDetailComponent/MovieDetailComponent';
-import { BackLink } from '../components/BackLink';
+import { getMovieDetails } from '../../api';
+import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
+import { MovieDetailComponent } from '../../components/MovieDetailComponent/MovieDetailComponent';
+import { BackLink } from '../../components/BackLink/BackLink';
+import css from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
   const location = useLocation();
@@ -36,7 +37,7 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.parallax}>
       <BackLink href={backLinkRef.current ?? '/movies'}>Go Back</BackLink>
       {movie && <MovieDetailComponent data={movie} />}
       <Suspense fallback={null}>

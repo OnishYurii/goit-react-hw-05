@@ -13,7 +13,7 @@ export const getTrendingMovies = async ({ abortController }) => {
   return response.data.results;
 };
 
-export const getSearchMovies = async query => {
+export const getSearchMovies = async (query, page, { abortController }) => {
   const config = {
     url: 'https://api.themoviedb.org/3/search/movie',
     headers: {
@@ -22,7 +22,9 @@ export const getSearchMovies = async query => {
     },
     params: {
       query: query,
+      page: page,
     },
+    signal: abortController.signal,
   };
   const response = await axios.request(config);
   return response.data.results;

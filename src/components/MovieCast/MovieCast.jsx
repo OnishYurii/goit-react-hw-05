@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCast } from '../../api';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
+import css from './MovieCast.module.css';
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -31,13 +32,13 @@ const MovieCast = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.wrap}>
       {actors.length > 0 && (
-        <ul>
+        <ul className={css.list}>
           {actors.map(actor => (
             <li key={actor.id}>
               <img src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name} />
-              <p>{actor.name}</p>
+              <p className={css.text}>{actor.name}</p>
               <p>Character: {actor.character}</p>
             </li>
           ))}

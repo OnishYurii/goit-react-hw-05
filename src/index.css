@@ -5,28 +5,39 @@
 }
 
 body {
+  color: rgb(227, 174, 147);
   margin: 0;
-  text-align: center;
-  background-color: black;
-  color: aliceblue;
+  background: radial-gradient(circle, #5d1a78, #414b50);
 }
 
 button:hover,
 button:focus {
-  background-color: #696765;
+  background-color: #7c2105;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
-.parallax {
-  background: url('/src/assets/bg.jpg');
-  min-height: 100vh;
-  width: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+header {
+  background: linear-gradient(45deg, rgb(138, 19, 45), rgb(236, 47, 35));
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }

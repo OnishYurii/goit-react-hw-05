@@ -1,0 +1,37 @@
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(227, 174, 147);
+}
+
+.poster {
+  transition: box-shadow 500ms linear;
+}
+
+.poster:hover,
+.poster:focus {
+  box-shadow: 10px 10px 8px 2px rgba(203, 194, 188, 0.438);
+  animation: scale 500ms linear forwards;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}

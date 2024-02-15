@@ -1,6 +1,6 @@
 import css from './SearchBar.module.css';
 import toast from 'react-hot-toast';
-import searchIcon from '../../assets/symbol-defs.svg';
+import { IoMdSearch } from 'react-icons/io';
 
 export const SearchBar = ({ onSubmit }) => {
   const handleSubmit = ev => {
@@ -31,9 +31,7 @@ export const SearchBar = ({ onSubmit }) => {
         className={css.input}
       />
       <button type="submit" className={css.button}>
-        <svg width="15" height="15">
-          <use href={`${searchIcon}#icon-search`}></use>
-        </svg>
+        <IoMdSearch size="20px" />
       </button>
     </form>
   );
