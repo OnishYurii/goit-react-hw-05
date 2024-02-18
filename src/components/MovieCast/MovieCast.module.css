@@ -18,3 +18,8 @@
   font-size: 20px;
   font-weight: 600;
 }
+
+.avatar {
+  width: 200px;
+  height: 300px;
+}

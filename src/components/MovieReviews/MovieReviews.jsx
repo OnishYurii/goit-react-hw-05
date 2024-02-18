@@ -43,7 +43,7 @@ const MovieReviews = () => {
           ))}
         </ul>
       ) : (
-        <p>We do not have any reviews of this movie 👀</p>
+        <p style={{ fontSize: 25 }}>We do not have any reviews of this movie 👀</p>
       )}
       {error && <ErrorMessage />}
     </div>

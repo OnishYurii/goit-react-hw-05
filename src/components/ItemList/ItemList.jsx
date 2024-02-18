@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import defualtIMG from './default_IMG.jpg';
 import css from './ItemList.module.css';
 
 export const ItemList = ({ data }) => {
@@ -9,7 +10,11 @@ export const ItemList = ({ data }) => {
       {data.map(item => (
         <li key={item.id} className={css.listItem}>
           <Link to={`/movies/${item.id}`} state={location}>
-            <img src={baseUrl + item.poster_path} alt={item.title} className={css.poster} />
+            <img
+              src={item.poster_path ? baseUrl + item.poster_path : defualtIMG}
+              alt={item.title}
+              className={css.poster}
+            />
           </Link>
           <Link to={`/movies/${item.id}`} state={location} className={css.link}>
             {item.title}

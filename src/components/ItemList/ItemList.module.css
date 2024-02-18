@@ -19,6 +19,8 @@
 
 .poster {
   transition: box-shadow 500ms linear;
+  width: 200px;
+  height: 305.6px;
 }
 
 .poster:hover,

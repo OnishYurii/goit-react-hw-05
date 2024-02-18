@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import css from './MovieDetailComponent.module.css';
+import defaultIMG from './default_IMG.jpg';
 import clsx from 'clsx';
 
 const buildLinkClass = ({ isActive }) => {
@@ -14,7 +15,11 @@ export const MovieDetailComponent = ({
   return (
     <div className={css.mainDiv}>
       <div className={css.wrapper}>
-        <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title} />
+        <img
+          src={poster_path ? `https://image.tmdb.org/t/p/w300${poster_path}` : defaultIMG}
+          alt={title}
+          className={css.poster}
+        />
         <div className={css.midDiv}>
           <h1 className={css.title}>
             {title} ({firstNumber})
