@@ -34,6 +34,7 @@ const MovieCast = () => {
 
   return (
     <div className={css.wrap}>
+      {error && <ErrorMessage />}
       {actors.length > 0 && (
         <ul className={css.list}>
           {actors.map(actor => (
@@ -53,7 +54,6 @@ const MovieCast = () => {
           ))}
         </ul>
       )}
-      {error && <ErrorMessage />}
     </div>
   );
 };
